@@ -203,8 +203,7 @@
             this.cmdCancelar.TabIndex = 9;
             this.cmdCancelar.Text = "Cancelar";
             this.cmdCancelar.UseVisualStyleBackColor = true;
-            this.cmdCancelar.Click += new System.EventHandler(this.button1_Click);
-            // 
+            //             
             // cmdRegistrar
             // 
             this.cmdRegistrar.Location = new System.Drawing.Point(251, 377);
@@ -213,6 +212,7 @@
             this.cmdRegistrar.TabIndex = 10;
             this.cmdRegistrar.Text = "Registrar";
             this.cmdRegistrar.UseVisualStyleBackColor = true;
+            this.cmdRegistrar.Click += new System.EventHandler(this.cmdRegistrar_Click);
             // 
             // label5
             // 

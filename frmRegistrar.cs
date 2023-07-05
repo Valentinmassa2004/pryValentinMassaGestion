@@ -48,13 +48,10 @@ namespace pryGestion
                         if (chkNotasReunion.Checked)
                         {
                             varTarea = "Notas";
-             
                         }
                         if(chkRepositorio.Checked)
                         {
-
                             varTarea = "Repositor";
-
                         }
                         MessageBox.Show("Vamos a grabar...");
                         cboTipoActividad.Focus();

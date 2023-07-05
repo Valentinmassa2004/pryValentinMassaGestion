@@ -44,7 +44,6 @@ namespace pryGestion
                         if (chkInvestigacion.Checked)
                         {
                             varTarea = "Investigacion";
-
                         }
                         if (chkNotasReunion.Checked)
                         {

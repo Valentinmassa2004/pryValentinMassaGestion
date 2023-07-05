@@ -46,8 +46,16 @@
             this.cmdCancelar = new System.Windows.Forms.Button();
             this.cmdRegistrar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.dtgvRegistro = new System.Windows.Forms.DataGridView();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoActividad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DetalleActividad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Reunión = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tareas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.mrcReunion.SuspendLayout();
             this.mrcTareas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvRegistro)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFecha
@@ -95,6 +103,13 @@
             // cboTipoActividad
             // 
             this.cboTipoActividad.FormattingEnabled = true;
+            this.cboTipoActividad.Items.AddRange(new object[] {
+            "Relevamiento",
+            "Propuesta",
+            "Diagnostico",
+            "Analisis",
+            "Diagrama de base de datos",
+            "Programacion"});
             this.cboTipoActividad.Location = new System.Drawing.Point(109, 57);
             this.cboTipoActividad.Name = "cboTipoActividad";
             this.cboTipoActividad.Size = new System.Drawing.Size(121, 21);
@@ -197,21 +212,26 @@
             // 
             // cmdCancelar
             // 
-            this.cmdCancelar.Location = new System.Drawing.Point(332, 377);
+            this.cmdCancelar.BackColor = System.Drawing.Color.Olive;
+            this.cmdCancelar.Font = new System.Drawing.Font("Pristina", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdCancelar.Location = new System.Drawing.Point(184, 365);
             this.cmdCancelar.Name = "cmdCancelar";
-            this.cmdCancelar.Size = new System.Drawing.Size(75, 23);
+            this.cmdCancelar.Size = new System.Drawing.Size(97, 35);
             this.cmdCancelar.TabIndex = 9;
             this.cmdCancelar.Text = "Cancelar";
-            this.cmdCancelar.UseVisualStyleBackColor = true;
-            //             
+            this.cmdCancelar.UseVisualStyleBackColor = false;
+            this.cmdCancelar.Click += new System.EventHandler(this.cmdCancelar_Click);
+            // 
             // cmdRegistrar
             // 
-            this.cmdRegistrar.Location = new System.Drawing.Point(251, 377);
+            this.cmdRegistrar.BackColor = System.Drawing.Color.Olive;
+            this.cmdRegistrar.Font = new System.Drawing.Font("Pristina", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmdRegistrar.Location = new System.Drawing.Point(49, 365);
             this.cmdRegistrar.Name = "cmdRegistrar";
-            this.cmdRegistrar.Size = new System.Drawing.Size(75, 23);
+            this.cmdRegistrar.Size = new System.Drawing.Size(92, 35);
             this.cmdRegistrar.TabIndex = 10;
             this.cmdRegistrar.Text = "Registrar";
-            this.cmdRegistrar.UseVisualStyleBackColor = true;
+            this.cmdRegistrar.UseVisualStyleBackColor = false;
             this.cmdRegistrar.Click += new System.EventHandler(this.cmdRegistrar_Click);
             // 
             // label5
@@ -223,11 +243,77 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Grabar la seleccion en variables";
             // 
+            // dtgvRegistro
+            // 
+            this.dtgvRegistro.AllowUserToAddRows = false;
+            this.dtgvRegistro.AllowUserToDeleteRows = false;
+            this.dtgvRegistro.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvRegistro.BackgroundColor = System.Drawing.Color.FloralWhite;
+            this.dtgvRegistro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgvRegistro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvRegistro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Fecha,
+            this.TipoActividad,
+            this.DetalleActividad,
+            this.Reunión,
+            this.Tareas});
+            this.dtgvRegistro.GridColor = System.Drawing.Color.FloralWhite;
+            this.dtgvRegistro.Location = new System.Drawing.Point(380, 34);
+            this.dtgvRegistro.Name = "dtgvRegistro";
+            this.dtgvRegistro.RowHeadersVisible = false;
+            this.dtgvRegistro.Size = new System.Drawing.Size(521, 285);
+            this.dtgvRegistro.TabIndex = 12;
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            // 
+            // TipoActividad
+            // 
+            this.TipoActividad.HeaderText = "Tipo Actividad";
+            this.TipoActividad.Name = "TipoActividad";
+            this.TipoActividad.ReadOnly = true;
+            // 
+            // DetalleActividad
+            // 
+            this.DetalleActividad.HeaderText = "Detalle Actividad";
+            this.DetalleActividad.Name = "DetalleActividad";
+            this.DetalleActividad.ReadOnly = true;
+            // 
+            // Reunión
+            // 
+            this.Reunión.HeaderText = "Reunión";
+            this.Reunión.Name = "Reunión";
+            this.Reunión.ReadOnly = true;
+            // 
+            // Tareas
+            // 
+            this.Tareas.HeaderText = "Tareas";
+            this.Tareas.Name = "Tareas";
+            this.Tareas.ReadOnly = true;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Olive;
+            this.btnCerrar.Font = new System.Drawing.Font("Pristina", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.Location = new System.Drawing.Point(835, 365);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(84, 35);
+            this.btnCerrar.TabIndex = 13;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
             // frmRegistrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.Olive;
+            this.ClientSize = new System.Drawing.Size(931, 450);
+            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.dtgvRegistro);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmdRegistrar);
             this.Controls.Add(this.cmdCancelar);
@@ -246,6 +332,7 @@
             this.mrcReunion.PerformLayout();
             this.mrcTareas.ResumeLayout(false);
             this.mrcTareas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvRegistro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,5 +358,12 @@
         private System.Windows.Forms.Button cmdCancelar;
         private System.Windows.Forms.Button cmdRegistrar;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dtgvRegistro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoActividad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DetalleActividad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Reunión;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tareas;
+        private System.Windows.Forms.Button btnCerrar;
     }
 }
